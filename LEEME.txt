@@ -1,0 +1,46 @@
+BLOG DE NOTICIAS AUTOADMINISTRABLE - "Huancayo Noticias"
+=========================================================
+Tecnologías: PHP 8 (sin frameworks), MySQL/MariaDB, HTML5, CSS3, JavaScript.
+
+INSTALACIÓN EN XAMPP
+1. Copiar la carpeta "blog-noticias" dentro de C:\xampp\htdocs\
+2. Abrir el panel de XAMPP e iniciar Apache y MySQL.
+3. Entrar a http://localhost/phpmyadmin  >  pestaña "Importar"  >
+   seleccionar el archivo database.sql  >  "Continuar".
+   (Se crea la base de datos blog_noticias con datos de ejemplo.)
+4. Abrir http://localhost/blog-noticias/
+
+ACCESO AL PANEL
+   http://localhost/blog-noticias/login.php
+   Usuario: admin      Contraseña: admin123
+
+Si tu MySQL tiene contraseña, cámbiala en config/db.php (DB_PASS).
+
+ESTRUCTURA
+   index.php             Portada: listado, búsqueda, filtro por categoría, paginación
+   noticia.php           Detalle de noticia, comentarios, lectura en voz alta
+   login.php/logout.php  Inicio y cierre de sesión
+   admin/index.php       Panel: estadísticas, listado, eliminar noticias
+   admin/editar.php      Crear y editar noticias (con imagen y texto alternativo)
+   admin/categorias.php  Gestión de categorías
+   admin/comentarios.php Moderación de comentarios
+   includes/             Cabecera, pie y funciones comunes
+   config/db.php         Conexión a la base de datos
+   assets/               CSS y JavaScript
+   uploads/              Imágenes subidas
+   database.sql          Script de base de datos
+
+FUNCIONALIDADES
+ - CRUD de noticias con estados publicada/borrador y noticias destacadas
+ - Categorías, búsqueda y paginación
+ - Comentarios con moderación y protección anti-spam
+ - Contador de lecturas y ranking de "Más leídas"
+ - Accesibilidad: enlace "saltar al contenido", navegación por teclado,
+   contraste AA, modo oscuro, ajuste de tamaño de texto, lectura en voz alta,
+   texto alternativo obligatorio en imágenes, formularios con etiquetas y
+   mensajes de error accesibles, respeta "reducir movimiento".
+ - Seguridad: consultas preparadas (PDO), contraseñas con password_hash,
+   protección CSRF, escape de HTML (XSS), validación de imágenes, límite de
+   intentos de inicio de sesión.
+ - Eficiencia: sin librerías externas, imágenes con carga diferida,
+   índices en la base de datos, paginación.

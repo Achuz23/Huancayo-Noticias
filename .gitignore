@@ -1,0 +1,5 @@
+uploads/*
+!uploads/.gitkeep
+.scannerwork/
+.vscode/
+.idea/
